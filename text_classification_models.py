@@ -46,6 +46,7 @@ selected_tfidf = st.sidebar.selectbox(
 )
 
 def load_model_components(model_name, selected_tfidf):
+    st.subheader(model_name)
     model = available_models[model_name]
     vectorizer = joblib.load(f"{TFIDF_DIR}/{selected_tfidf}.pkl")
     label_mapping = joblib.load(f"{MODEL_DIR}/{model_name}.pkl")
